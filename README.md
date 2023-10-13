@@ -17,6 +17,7 @@ Docker에서 NVIDIA GPU 사용을 위한 toolkit 설치가 필요합니다. 설�
 이번 대회 base docker image는 **nvcr.io/nvidia/pytorch:23.05-py3** 입니다.
 이미지에 대한 자세한 사항 및 설명은 [link](https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/rel-23-05.html)을 참조 해주세요. 아래 명령어를 통해 Docker setting을 진행합니다.
 ```
+bash$) chmod 755 docker_seeting.sh
 bash$) ./docker_setting.sh
 ```
 ※ 스크립트 내의 docker container 실행을 위한 옵션은 변경하셔서 사용하시면 됩니다.
@@ -33,6 +34,7 @@ bash$) apt-get install bc
 
 세팅을 마치신 후, evaluation code를 실행하여 Accuracy 및 Inference time을 확인하세요.
 ```
+bash$) chmod 755 exec_evaluation.sh
 bash$) ./exec_evaluation.sh
 ```
 아래와 같은 Accuracy 및 Inference time이 출력되면 기본적인 세팅은 완료되었습니다.
