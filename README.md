@@ -38,4 +38,14 @@ bash$) apt-get install bc
 bash$) chmod 755 exec_evaluation.sh
 bash$) ./exec_evaluation.sh
 ```
-아래와 같은 Accuracy 및 Inference time이 출력되면 기본적인 세팅은 완료되었습니다.
+아래와 같이 Accuracy 및 Inference time이 출력되면 기본적인 세팅은 완료되었습니다.
+|Task       |Version|Metric|Value | Stderr|
+|---|---|---|---|---|
+|hellaswag  |0      |acc   |0.6334| 0.0048|
+|           |       |acc_norm|0.8263|0.0038|
+
+time: 3763.656885741
+
+※ 위 수치는 제공된 서버에서 Docker setting이 완료된 후 exec_evaluation.sh 스크립트를 수행한 결과입니다.   
+(위 수치와 정확하게 나와야 된다는 의미는 아닙니다.)
+
