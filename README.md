@@ -20,7 +20,8 @@ Docker에서 NVIDIA GPU 사용을 위한 toolkit 설치가 필요합니다. 설�
 bash$) chmod 755 docker_seeting.sh
 bash$) ./docker_setting.sh
 ```
-※ 스크립트 내의 docker container 실행을 위한 옵션은 변경하셔서 사용하시면 됩니다.
+※ 스크립트 내의 docker container 실행을 위한 옵션은 변경하셔서 사용하시면 됩니다.   
+※ /home directory가 기본 mount directory 입니다.
 
 ## Model & Dataset Download
 2차 라운드에서 사용하게 될 모델은 LLaMA1-30B입니다. 해당 [link](https://huggingface.co/huggyllama/llama-30b)를 참고하여, 다운로드 진행 해주세요. Dataset은 [HellaSwag](https://huggingface.co/datasets/hellaswag) 입니다.
