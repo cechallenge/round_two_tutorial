@@ -7,6 +7,9 @@ CE Challenge round 2 tutorial 문서입니다.
 ```
 bash$) ssh <계정 아이디>@<IP주소>
 ```
+## NVIDIA Toolkit install
+Docker에서 NVIDIA GPU 사용을 위한 toolkit 설치가 필요합니다. 설치를 위한 가이드는 해당 [사이트](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)를 참조하여 설치 해주세요.
+
 ## CUDA Driver install
 이번 대회에서 사용한 docker image와 호환되는 CUDA driver는 12.1입니다. 설치를 위한 가이드는 해당 [사이트](https://developer.nvidia.com/cuda-12-1-0-download-archive?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=20.04&target_type=deb_local)를 참조하여 설치 해주세요.
 
@@ -22,6 +25,12 @@ bash$) ./docker_setting.sh
 2차 라운드에서 사용하게 될 모델은 LLaMA1-30B입니다. 해당 [link](https://huggingface.co/huggyllama/llama-30b)를 참고하여, 다운로드 진행 해주세요. Dataset은 [HellaSwag](https://huggingface.co/datasets/hellaswag) 입니다.
 
 ## Evaulation
+### prerequisite
+```
+bash$) apt-get update
+bash$) apt-get install bc
+```
+
 세팅을 마치신 후, evaluation code를 실행하여 Accuracy 및 Inference time을 확인하세요.
 ```
 bash$) ./exec_evaluation.sh
