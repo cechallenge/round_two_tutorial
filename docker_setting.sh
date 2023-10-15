@@ -15,17 +15,7 @@ if [ ! $result -eq 0 ]; then
                -v $WORKSPACE:$WORKSPACE \
                -v /home/:/home/ \
                --name=${container_name} \
-               --gpus all \
-               -u root $image_name /bin/bash -c \
-               "groupadd -g `id -g` $(whoami); groupadd -rg 109 render; \
-                usermod -aG render,video,sudo root; \
-                echo '$(whoami) ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers; \
-                echo \"$(whoami) soft nofile \`ulimit -n\`\" >> /etc/security/limits.conf; \
-                echo \"export http_proxy=$http_proxy\" >> /etc/environment; \
-                echo \"export https_proxy=$https_proxy\" >> /etc/environment; \
-                echo \"export HTTP_PROXY=$HTTP_PROXY\" >> /etc/environment; \
-                echo \"export HTTPS_PROXY=$HTTPS_PROXY\" >> /etc/environment; /bin/bash"
-
+               --gpus all
 else
     docker start  ${container_name} && docker attach ${container_name}
 fi
