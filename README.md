@@ -47,5 +47,5 @@ bash$) ./exec_evaluation.sh
 time: 3763.656885741
 
 ※ 위 수치는 제공된 서버에서 Docker setting이 완료된 후 exec_evaluation.sh 스크립트를 수행한 결과입니다.   
-(위 수치와 정확하게 나와야 된다는 의미는 아닙니다.)
+(위 수치와 동일하게 나와야 된다는 의미는 아닙니다.)
 
