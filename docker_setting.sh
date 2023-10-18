@@ -3,6 +3,9 @@ image_name='nvcr.io/nvidia/pytorch:23.05-py3'
 container_name='CE'
 WORKSPACE=$HOME
 
+docker ps -a | grep ${container_name} > /dev/null 2>&1
+result=$?
+
 if [ ! $result -eq 0 ]; then
     echo "No Container found, Create new containter ${container_name}"
 
@@ -15,7 +18,8 @@ if [ ! $result -eq 0 ]; then
                -v $WORKSPACE:$WORKSPACE \
                -v /home/:/home/ \
                --name=${container_name} \
-               --gpus all
+               --gpus all \
+               $image_name
 else
     docker start  ${container_name} && docker attach ${container_name}
 fi
